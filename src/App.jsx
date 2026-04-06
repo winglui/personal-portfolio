@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-      <div className="flex min-h-screen w-full subpixel-antialiased">
+      <div className="flex min-h-screen w-full subpixel-antialiased justify-center">
         <HeaderLeft />
 
         <main className="flex-[3]">
