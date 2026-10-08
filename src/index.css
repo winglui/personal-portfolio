@@ -1,23 +1,45 @@
 @import "tailwindcss";
 
-* {
-  font-family: "Inter";
+@theme {
+  --color-paper: #F7F8FA;
+  --color-ink: #14213D;
+  --color-slate: #566074;
+  --color-signal: #2457F5;
+  --color-signal-dark: #1A44D1;
+  --color-rule: #DCE1EA;
+  --color-wash: #EAF0FE;
+
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-condensed: "IBM Plex Sans Condensed", "IBM Plex Sans", sans-serif;
+}
+
+html {
   scroll-behavior: smooth;
-  box-sizing: border-box;
+  /* keeps section headings clear of the mobile top bar */
+  scroll-padding-top: 64px;
 }
 
-::-webkit-scrollbar {
-  width: 20px;
+@media (min-width: 64rem) {
+  html {
+    scroll-padding-top: 0;
+  }
 }
 
-::-webkit-scrollbar-thumb {
-  background-color: var(--color-blue-600);
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
-::-webkit-scrollbar-track {
-  background: rgb(233, 233, 233);
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-size: 17px;
+  line-height: 1.6;
 }
 
-.loaderIcon {
-    animation: spin 1s infinite linear;
+:focus-visible {
+  outline: 2px solid var(--color-signal);
+  outline-offset: 3px;
+  border-radius: 4px;
 }

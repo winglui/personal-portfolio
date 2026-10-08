@@ -1,53 +1,70 @@
-import React from 'react'
+import Section from './Section'
 
 const projects = [
   {
     name: "Better Tips Calculator",
-    description: "React TypeScript Tailwind CSS HTML5",
-    url: "https://react-better-tips-calculator.netlify.app"
+    description: "Enter a bill and pick a tip percentage to see the tip and total.",
+    stack: "React, TypeScript, Tailwind CSS",
+    url: "https://react-better-tips-calculator.netlify.app",
+    image: "/projects/tips.jpg",
+    linkLabel: "Live demo",
   },
   {
     name: "Tenzies",
-    description: "React JavaScript HTML5 CSS3",
-    url: "https://unrivaled-pavlova-c983eb.netlify.app"
+    description: "A dice game: freeze dice between rolls until all ten match.",
+    stack: "React, JavaScript, CSS",
+    url: "https://unrivaled-pavlova-c983eb.netlify.app",
+    image: "/projects/tenzies.jpg",
+    linkLabel: "Live demo",
   },
   {
     name: "Favorite Movies",
-    description: "React JavaScript HTML5 CSS3",
-    url: "https://react-my-favorite-movies.netlify.app/"
-  },
-  {
-    name: "Personal Portfolio",
-    description: "React JavaScript Tailwind CSS HTML5",
-    url: "https://wing-lui.netlify.app"
+    description: "Search for movies and save the ones you like to a favorites list.",
+    stack: "React, JavaScript, CSS",
+    url: "https://react-my-favorite-movies.netlify.app/",
+    image: "/projects/movies.jpg",
+    linkLabel: "Live demo",
   },
   {
     name: "Fusion Security Testing",
-    description: "Angular DART HTML5 CSS3",
-    url: "https://www.trustwave.com/en-us/services/penetration-testing/"
-  }
-
+    description: "Trustwave's security testing portal for its clients.",
+    stack: "AngularDart, HTML, CSS",
+    url: "https://www.trustwave.com/en-us/services/penetration-testing/",
+    note: "Built at Trustwave. Client work, no public demo.",
+    linkLabel: "Product page",
+  },
 ]
 
 const Projects = () => {
-
   return (
-    <div id="projects" className='min-h-screen w-full flex flex-col items-center justify-center gap-20 p-10 md:p-16 xl:px-32'>
-      <h1 className='text-center text-5xl font-light'>Projects</h1>
-
-      <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5'>
-
+    <Section id='projects' title='Projects'>
+      <div className='grid gap-5 md:grid-cols-2'>
         {projects.map((project) => (
-          <a key={project.name} href={project.url} target="_blank"><div className='text-left space-y-2 border-2 hover:scale-105 transition-all duration-200 cursor-pointer px-8 py-10 border-blue-500 rounded-lg hover:bg-blue-50'>
-            <h1 className='text-3xl font-semibold'>{project.name}</h1>
-            <p className='text-xl text-gray-700'>Tech Stack</p>
-            <p className='text-sm text-gray-600'>{project.description}</p>
-          </div></a>
+          <a
+            key={project.name}
+            href={project.url}
+            target='_blank'
+            rel='noopener noreferrer'
+            className='flex flex-col overflow-hidden rounded-[10px] border border-rule bg-white transition-colors hover:border-signal'
+          >
+            <div className='aspect-[16/10] border-b border-rule bg-ink'>
+              {project.image ? (
+                <img src={project.image} alt='' loading='lazy' className='h-full w-full object-cover object-top' />
+              ) : (
+                <p className='flex h-full items-end p-5 text-[15px] text-[#C9D3F5]'>{project.note}</p>
+              )}
+            </div>
+
+            <div className='flex flex-1 flex-col gap-1.5 px-5 pt-4.5 pb-5'>
+              <h3 className='text-xl font-semibold'>{project.name}</h3>
+              <p className='text-slate'>{project.description}</p>
+              <p className='mt-auto pt-2 text-[15px] text-slate'>{project.stack}</p>
+              <span className='text-[15px] font-medium text-signal'>{project.linkLabel}</span>
+            </div>
+          </a>
         ))}
       </div>
-
-
-    </div>
+    </Section>
   )
 }
 
