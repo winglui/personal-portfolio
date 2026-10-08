@@ -15,8 +15,8 @@ const Home = () => {
         </div>
 
         <div className='flex gap-3'>
-          <a href="https://www.linkedin.com/in/wing-lui/" target="_blank"><BiLogoGithub className='h-10 w-10 rounded-full cursor-pointer border-2 border-transparent bg-blue-600 p-2 text-white transition-all duration-200 hover:scale-110 hover:border-blue-600 hover:bg-white hover:text-blue-600 md:h-12 md:w-12'/></a>
-          <a href="https://github.com/winglui" target="_blank"><BiLogoLinkedin className='h-10 w-10 rounded-full cursor-pointer border-2 border-transparent bg-blue-600 p-2 text-white transition-all duration-200 hover:scale-110 hover:border-blue-600 hover:bg-white hover:text-blue-600 md:h-12 md:w-12'/></a>
+          <a href="https://github.com/winglui" target="_blank" aria-label="GitHub"><BiLogoGithub className='h-10 w-10 rounded-full cursor-pointer border-2 border-transparent bg-blue-600 p-2 text-white transition-all duration-200 hover:scale-110 hover:border-blue-600 hover:bg-white hover:text-blue-600 md:h-12 md:w-12'/></a>
+          <a href="https://www.linkedin.com/in/wing-lui/" target="_blank" aria-label="LinkedIn"><BiLogoLinkedin className='h-10 w-10 rounded-full cursor-pointer border-2 border-transparent bg-blue-600 p-2 text-white transition-all duration-200 hover:scale-110 hover:border-blue-600 hover:bg-white hover:text-blue-600 md:h-12 md:w-12'/></a>
        
         </div>
 

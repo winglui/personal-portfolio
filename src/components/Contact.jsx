@@ -26,11 +26,16 @@ const Contact = () => {
   function handleSubmit(e) {
     e.preventDefault();
 
+    if (Object.values(formData).some(value => !value.trim())) {
+      alert('Please fill in all fields.');
+      return;
+    }
+
     setIsSending(true)
     emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, {
       publicKey: PUBLIC_KEY
     }).then(() => {
-      alert('Messge sent');
+      alert('Message sent');
       setFormData({ from_name: '', message: '', from_email: '' })
     }).catch(() => {
       alert('Something was wrong.  Please try again later.')
@@ -48,6 +53,7 @@ const Contact = () => {
           <input type="text"
             placeholder='Your Name'
             name="from_name"
+            required
             value={formData.from_name}
             onChange={handleChange}
             className='rounded-lg border-2 border-blue-400 px-4 py-3 text-lg outline-none transition-all duration-200 hover:bg-blue-50 focus:ring-2 focus:ring-blue-500'></input>
@@ -55,6 +61,7 @@ const Contact = () => {
           <input type="email"
             placeholder='Email'
             name="from_email"
+            required
             value={formData.from_email}
             onChange={handleChange}
             className='rounded-lg border-2 border-blue-400 px-4 py-3 text-lg outline-none transition-all duration-200 hover:bg-blue-50 focus:ring-2 focus:ring-blue-500'></input>
@@ -63,6 +70,7 @@ const Contact = () => {
 
         <textarea
           name="message"
+          required
           value={formData.message}
           placeholder='Your Message'
           onChange={handleChange}

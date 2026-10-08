@@ -10,9 +10,9 @@ const HeaderLeft = () => {
       <div className='min-h-screen top-0 hidden md:sticky md:flex items-center justify-center bg-blue-600 text-white'>
         <ul className='flex flex-col gap-10'>
           {sections.map((section) => (
-            <li key={section} className='flex items-center justify-start cursor-pointer font-medium trasition-all duration-200 group sm:text-lg md:text-xl xl:text-3xl'>
+            <li key={section} className='flex items-center justify-start cursor-pointer font-medium transition-all duration-200 group sm:text-lg md:text-xl xl:text-3xl'>
               <BiRightArrowAlt className='text-4xl -translate-x-5 opacity-0 transform transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-0' />
-              <a href={`#${section}`} className='transition-all duration-200 hover:translate-x-3'>{section}</a>
+              <a href={`#${section}`} className='capitalize transition-all duration-200 hover:translate-x-3'>{section}</a>
             </li>
           ))}
         </ul>
